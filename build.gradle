@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.automation'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("org.seleniumhq.selenium:selenium-java:4.33.0")
+    implementation("org.apache.logging.log4j:log4j-core:2.25.1")
+    implementation("org.apache.logging.log4j:log4j-api:2.25.1")
+    implementation("org.testng:testng:7.11.0")
+    implementation("com.aventstack:extentreports:5.1.2")
+    implementation("commons-io:commons-io:2.20.0")
+}
+
+test {
+    useTestNG() {
+        // To generate reports by TestNG library
+        useDefaultListeners = true
+        //set TestNG output dir
+        outputDirectory = file("$projectDir/test-output/testNG")
+    }
+}
