@@ -2,6 +2,7 @@ package testcases.login;
 
 import base.BaseTest;
 import drivers.DriverManager;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DashboardPage;
@@ -88,10 +89,10 @@ public class TC01_LoginTest extends BaseTest {
         ExtentReportManager.info("Step 5: Verify that the user logged in failed");
         ExtentReportManager.info("VP: 'Invalid credentials' error message displays");
 
-//        //VP: Login page still remains
-//        logger.info("VP: Login page still remains");
-//        ExtentReportManager.info("VP: Login page still remains");
-//        Assert.assertTrue(loginPage.isLoginPageDisplayed(), "Login Page displays"); // get error StaleElementReferenceException, need to findElement again
+        //VP: Login page still remains
+        logger.info("VP: Login page still remains");
+        ExtentReportManager.info("VP: Login page still remains");
+        Assert.assertTrue(loginPage.isLoginPageDisplayed(), "Login Page displays"); // get error StaleElementReferenceException, need to call findElement again by wait visibility in isLoginPageDisplayed
 
         ExtentReportManager.pass("PASSED");
     }
